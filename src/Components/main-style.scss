@@ -1,0 +1,140 @@
+/*  Roboto */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;1,300&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: rgb(35, 35, 35);
+    display: flex;
+    justify-content: center;
+}
+
+// * Mixins * //
+@mixin header() {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 100;
+    
+    text-align: center;
+    color: #fff;    
+
+    padding-bottom: 1rem;
+}
+.header {
+    @include header()
+}
+.sub-header {
+    @include header();
+    padding-bottom: 0;
+}
+
+@mixin buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 2rem;
+    width: 2rem;
+} 
+#nextSlide, #prevSlide {
+    @include buttons();
+}
+// * === Mixins * === //
+
+.buttons {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.carousel {
+    overflow: hidden;  // Hide the overflow so that only one item is visible
+}
+.inner {
+    white-space: nowrap;
+    transition: transform 0.3s;
+    -webkit-transition: transform 0.3s;
+    -moz-transition: transform 0.3s;
+    -ms-transition: transform 0.3s;
+    -o-transition: transform 0.3s;
+}
+
+.carousel-photo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 20rem;
+    
+    background-color: rgb(255, 255, 255);
+
+    color: rgb(0, 0, 0);
+}
+
+.move-bttns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 2rem;
+}
+.move-bttns > button {  
+    margin: 5px;
+}
+.moveRight, .moveLeft {
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+
+    background-color: rgba(0, 0, 0, 0.261);
+    padding: 5px;
+
+    cursor: pointer;
+}
+
+// * Apply these styles to an active label: //
+.active {
+    background-color: rgba(12, 239, 255, 0.754);
+    box-shadow: 0px 0px 10px 0px rgba(12, 239, 255, 0.754);
+
+    border: none;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+
+    height: 12px;
+    width: 12px;
+}
+// * === Apply these styles to an active label: * === //
+
+
+// * Styles for inactive labels: //
+.label {
+    background-color: rgb(175, 175, 175);
+    border: none;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+
+    height: 7px;
+    width: 7px;
+
+    cursor: pointer;
+}
+// Smooth hover:
+.label:hover {
+    background-color: rgba(12, 239, 255, 0.754);
+    transition: 0.3s ease-in;
+    -webkit-transition: 0.3s ease-in;
+    -moz-transition: 0.3s ease-in;
+    -ms-transition: 0.3s ease-in;
+    -o-transition: 0.3s ease-in;
+}
+// * === Styles for inactive labels: * === //
